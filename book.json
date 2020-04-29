@@ -1,0 +1,40 @@
+{
+    "title" : "Leet学习笔记",
+    "author" : "黄文庆",
+    "description": "",
+    "language" : "zh-hans",
+    "plugins" : [ 
+        "code" ,
+        "github",
+        "theme-comscore",
+        "tbfed-pagefooter",
+        "search-plus",
+        "expandable-chapters",
+        "splitter" ,
+        "popup",
+        "disqus",
+        "katex"
+    ],
+
+
+
+    "pluginsConfig": {
+      "theme-default": {
+        "treeLevel": true
+      },
+      "github": {
+        "url": "https://github.com/micro-coder/ROS-Note"
+    },
+      "code": {
+          "copyButtons": true
+      },
+      "tbfed-pagefooter": {
+          "copyright":"&copy 黄文庆",
+          "modify_label": "文件修订时间：",
+          "modify_format": "YYYY-MM-DD HH:mm:ss"
+      },
+      "disqus": {
+        "shortName": "Huang-wq"
+    }
+    }
+}
