@@ -21,10 +21,6 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
                 
             
@@ -34,10 +30,6 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
                 
             
                 
@@ -88,6 +80,8 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
+    
+    <link rel="next" href="最大子序和.html" />
     
     
     <link rel="prev" href="Chapter1.html" />
@@ -159,6 +153,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.2" data-path="最大子序和.html">
+            
+                <a href="最大子序和.html">
+            
+                    
+                    最大子序和
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -213,70 +220,75 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="median-of-two-sorted-arrays">Median of Two Sorted Arrays</h1>
-<p>There are two sorted arrays nums1 and nums2 of size m and n respectively.Find the median of the two sorted arrays. The overall run time complexity should be O(log(m+n)).</p>
-<ol>
-<li>&#x4E2D;&#x4F4D;&#x6570;&#x7684;&#x6982;&#x5FF5;<br>&#x5C06;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x957F;&#x5EA6;&#x76F8;&#x7B49;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x603B;&#x662F;&#x5927;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</li>
-<li>&#x5C06;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x5206;&#x6210;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x5173;&#x7CFB;&#x5F0F;:   &#x3000;&#x3000;</li>
-</ol>
+<p>There are two sorted arrays nums1 and nums2 of size m and n respectively.Find the median of the two sorted arrays. The overall run time complexity should be O(log(m+n)).<br><strong>&#x4E2D;&#x4F4D;&#x6570;&#x7684;&#x6982;&#x5FF5;</strong>  </p>
+<ul>
+<li>&#x5C06;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x957F;&#x5EA6;&#x76F8;&#x7B49;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x603B;&#x662F;&#x5927;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</li>
+</ul>
+<p><strong>&#x65B9;&#x6CD5;&#xFF1A; &#x5206;&#x6CBB;&#x6CD5; </strong></p>
+<p><strong>&#x7B97;&#x6CD5;&#x5206;&#x6790;</strong>  </p>
+<ul>
+<li>&#x5C06;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x5206;&#x6210;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x5173;&#x7CFB;&#x5F0F;:<pre><code>len(left_part)=len(right_part)   
+max(left_part)&#x2264;min(right_part)
+</code></pre></li>
+</ul>
 <table>
 <thead>
 <tr>
 <th>left_part</th>
-<th>right_part  </th>
+<th>right_part</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>A[0], A[1], ..., A[i-1]</td>
-<td>A[i], A[i+1], ..., A[m-1]  </td>
+<td>A[i], A[i+1], ..., A[m-1]</td>
 </tr>
 <tr>
 <td>B[0], B[1], ..., B[j-1]</td>
-<td>B[j], B[j+1], ..., B[n-1]  </td>
+<td>B[j], B[j+1], ..., B[n-1]</td>
 </tr>
 </tbody>
 </table>
-<pre><code>len(left_part)=len(right_part)   
-max(left_part)&#x2264;min(right_part)
-</code></pre><ol>
-<li><p>&#x90A3;&#x4E48;&#xFF0C;&#x4E2D;&#x4F4D;&#x6570;&#x5C31;&#x662F;&#xFF1A;<br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>a</mi><mi>n</mi><mo>=</mo><mo>[</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>l</mi><mi>e</mi><mi>f</mi><msub><mi>t</mi><mi>p</mi></msub><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>+</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>(</mo><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><msub><mi>t</mi><mi>p</mi></msub><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>]</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">median=[max(left_part)+min(right_part)] / 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mrel">=</span><span class="mopen">[</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord"><span class="mord mathit">t</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">p</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">h</span><span class="mord"><span class="mord mathit">t</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">p</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mclose">]</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>
-&#x200B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findMedianSortedArrays</span><span class="hljs-params">(<span class="hljs-keyword">int</span> A[],<span class="hljs-keyword">int</span> A_len, <span class="hljs-keyword">int</span> B[],<span class="hljs-keyword">int</span> B_len)</span>
-</span>{
- <span class="hljs-keyword">int</span> m=A_len,n=B_len;
- <span class="hljs-keyword">int</span> iMin = <span class="hljs-number">0</span>, iMax = m, halfLen = (m + n + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
- <span class="hljs-keyword">while</span> (iMin &lt;= iMax) {
-     <span class="hljs-keyword">int</span> i = (iMin + iMax) / <span class="hljs-number">2</span>;
-     <span class="hljs-keyword">int</span> j = halfLen - i;
-     <span class="hljs-keyword">if</span> (i &lt; iMax &amp;&amp; B[j<span class="hljs-number">-1</span>] &gt; A[i]){
-         iMin = i + <span class="hljs-number">1</span>; <span class="hljs-comment">// i is too small,&#x9700;&#x8981;&#x589E;&#x5927;i&#xFF0C;&#x51CF;&#x5C0F;j</span>
-     }
-     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i &gt; iMin &amp;&amp; A[i<span class="hljs-number">-1</span>] &gt; B[j]) {
-         iMax = i - <span class="hljs-number">1</span>; <span class="hljs-comment">// i is too big,&#x9700;&#x8981;&#x51CF;&#x5C0F;i&#xFF0C;&#x589E;&#x5927;j</span>
-     }
-     <span class="hljs-keyword">else</span> { <span class="hljs-comment">// i is perfect&#xFF0C;i&#x662F;&#x4E34;&#x754C;&#x503C;&#xFF0C;0&#x6216;&#x8005;m</span>
-     <span class="hljs-keyword">int</span> maxLeft = <span class="hljs-number">0</span>;
-     <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) { maxLeft = B[j<span class="hljs-number">-1</span>]; }
-     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == <span class="hljs-number">0</span>) { maxLeft = A[i<span class="hljs-number">-1</span>]; }
-     <span class="hljs-keyword">else</span> { maxLeft = max(A[i<span class="hljs-number">-1</span>], B[j<span class="hljs-number">-1</span>]); }
-     <span class="hljs-keyword">if</span> ( (m + n) % <span class="hljs-number">2</span> == <span class="hljs-number">1</span> ) { <span class="hljs-keyword">return</span> maxLeft; }
+<ul>
+<li>&#x90A3;&#x4E48;&#xFF0C;&#x4E2D;&#x4F4D;&#x6570;&#x5C31;&#x662F;&#xFF1A;<br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>a</mi><mi>n</mi><mo>=</mo><mo>[</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>l</mi><mi>e</mi><mi>f</mi><msub><mi>t</mi><mi>p</mi></msub><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>+</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>(</mo><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><msub><mi>t</mi><mi>p</mi></msub><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>]</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">median=[max(left_part)+min(right_part)] / 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mrel">=</span><span class="mopen">[</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord"><span class="mord mathit">t</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">p</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">h</span><span class="mord"><span class="mord mathit">t</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">p</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mclose">]</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>  </li>
+</ul>
+<p><strong>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findMedianSortedArrays</span><span class="hljs-params">(<span class="hljs-keyword">int</span> A[],<span class="hljs-keyword">int</span> A_len, <span class="hljs-keyword">int</span> B[],<span class="hljs-keyword">int</span> B_len)</span> </span>{
+      <span class="hljs-keyword">int</span> m=A_len,n=B_len;
+      <span class="hljs-keyword">int</span> iMin = <span class="hljs-number">0</span>, iMax = m, halfLen = (m + n + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+      <span class="hljs-keyword">while</span> (iMin &lt;= iMax) {
+          <span class="hljs-keyword">int</span> i = (iMin + iMax) / <span class="hljs-number">2</span>;
+          <span class="hljs-keyword">int</span> j = halfLen - i;
+          <span class="hljs-keyword">if</span> (i &lt; iMax &amp;&amp; B[j<span class="hljs-number">-1</span>] &gt; A[i]){
+              iMin = i + <span class="hljs-number">1</span>; <span class="hljs-comment">// i is too small,&#x9700;&#x8981;&#x589E;&#x5927;i&#xFF0C;&#x51CF;&#x5C0F;j</span>
+          }
+          <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i &gt; iMin &amp;&amp; A[i<span class="hljs-number">-1</span>] &gt; B[j]) {
+              iMax = i - <span class="hljs-number">1</span>; <span class="hljs-comment">// i is too big,&#x9700;&#x8981;&#x51CF;&#x5C0F;i&#xFF0C;&#x589E;&#x5927;j</span>
+          }
+          <span class="hljs-keyword">else</span> { <span class="hljs-comment">// i is perfect&#xFF0C;i&#x662F;&#x4E34;&#x754C;&#x503C;&#xFF0C;0&#x6216;&#x8005;m</span>
+          <span class="hljs-keyword">int</span> maxLeft = <span class="hljs-number">0</span>;
+          <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) { maxLeft = B[j<span class="hljs-number">-1</span>]; }
+          <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == <span class="hljs-number">0</span>) { maxLeft = A[i<span class="hljs-number">-1</span>]; }
+          <span class="hljs-keyword">else</span> { maxLeft = max(A[i<span class="hljs-number">-1</span>], B[j<span class="hljs-number">-1</span>]); }
+          <span class="hljs-keyword">if</span> ( (m + n) % <span class="hljs-number">2</span> == <span class="hljs-number">1</span> ) { <span class="hljs-keyword">return</span> maxLeft; }
 
-     <span class="hljs-keyword">int</span> minRight = <span class="hljs-number">0</span>;
-     <span class="hljs-keyword">if</span> (i == m) { minRight = B[j]; }
-     <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == n) { minRight = A[i]; }
-     <span class="hljs-keyword">else</span> { minRight = min(B[j], A[i]); }
+          <span class="hljs-keyword">int</span> minRight = <span class="hljs-number">0</span>;
+          <span class="hljs-keyword">if</span> (i == m) { minRight = B[j]; }
+          <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == n) { minRight = A[i]; }
+          <span class="hljs-keyword">else</span> { minRight = min(B[j], A[i]); }
 
-     <span class="hljs-keyword">return</span> (maxLeft + minRight) / <span class="hljs-number">2</span>;
-     }
- }
+          <span class="hljs-keyword">return</span> (maxLeft + minRight) / <span class="hljs-number">2</span>;
+          }
+      }
 }
 </code></pre>
-<p>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x5982;&#x56FE;:<br>&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x4E3A;:<br><em>array1</em>[3] = {1,2,7};<br><em>array2</em>[3] = {3,5,6};<br><img src="picture/1-0.png" alt="1-0"></p>
-</li>
-</ol>
-<footer class="page-footer"><span class="copyright">&#xA9; &#x9EC4;&#x6587;&#x5E86; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2020-04-29 16:50:41
-</span></footer>
+<p><strong>&#x8FD0;&#x884C;&#x7ED3;&#x679C;:</strong><br>&#x3000;&#x3000;<em>&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x4E3A;:array1</em>[3] = {1,2,7};  <em>array2</em>[3] = {3,5,6};<br>&#x3000;&#x3000;<img src="picture/1-0.png" alt="1-0"></p>
+<p><strong>&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;:</strong>  </p>
+<ul>
+<li>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;&#x67E5;&#x627E;&#x7684;&#x533A;&#x95F4;&#x662F;[0,m],&#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x4E4B;&#x540E;&#xFF0C;&#x67E5;&#x627E;&#x533A;&#x95F4;&#x7684;&#x957F;&#x5EA6;&#x90FD;&#x4F1A;&#x964D;&#x4E3A;&#x539F;&#x5148;&#x7684;&#x4E00;&#x534A;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6700;&#x591A;&#x6267;&#x884C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>g</mi><mo>(</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">lg(m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">m</span><span class="mclose">)</span></span></span></span>&#x6B21;&#x3002;
+&#x7531;&#x4E8E;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>&lt;</mo><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex"> m&lt;=n </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.5391em;"></span><span class="strut bottom" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span><span class="mrel">&lt;</span><span class="mrel">=</span><span class="mord mathit">n</span></span></span></span>,&#x6240;&#x4EE5;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>(</mo><mi>m</mi><mo separator="true">,</mo><mi>n</mi><mo>)</mo><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex"> O(lg(min(m,n))) </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">(</span><span class="mord mathit">m</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span>&#x3002;</li>
+</ul>
+
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
                                 </section>
@@ -320,10 +332,14 @@ max(left_part)&#x2264;min(right_part)
 
             
                 
-                <a href="Chapter1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 分治法">
+                <a href="Chapter1.html" class="navigation navigation-prev " aria-label="Previous page: 分治法">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="最大子序和.html" class="navigation navigation-next " aria-label="Next page: 最大子序和">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -332,7 +348,7 @@ max(left_part)&#x2264;min(right_part)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"中位数","level":"1.2.1","depth":2,"previous":{"title":"分治法","level":"1.2","depth":1,"path":"Chapter1/Chapter1.md","ref":"Chapter1/Chapter1.md","articles":[{"title":"中位数","level":"1.2.1","depth":2,"path":"Chapter1/中位数.md","ref":"Chapter1/中位数.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","github","theme-comscore","tbfed-pagefooter","search-plus","expandable-chapters","splitter","popup","disqus","katex","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy 黄文庆","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"disqus":{"useIdentifier":false,"shortName":"Huang-wq"},"github":{"url":"https://github.com/micro-coder/ROS-Note"},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter1/中位数.md","mtime":"2020-04-29T08:50:41.665Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-29T08:47:09.467Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"中位数","level":"1.2.1","depth":2,"next":{"title":"最大子序和","level":"1.2.2","depth":2,"path":"Chapter1/最大子序和.md","ref":"Chapter1/最大子序和.md","articles":[]},"previous":{"title":"分治法","level":"1.2","depth":1,"path":"Chapter1/Chapter1.md","ref":"Chapter1/Chapter1.md","articles":[{"title":"中位数","level":"1.2.1","depth":2,"path":"Chapter1/中位数.md","ref":"Chapter1/中位数.md","articles":[]},{"title":"最大子序和","level":"1.2.2","depth":2,"path":"Chapter1/最大子序和.md","ref":"Chapter1/最大子序和.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","github","theme-comscore","search-plus","expandable-chapters","splitter","popup","katex","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/micro-coder/ROS-Note"},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter1/中位数.md","mtime":"2020-04-30T08:00:33.838Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-30T08:05:15.505Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -363,14 +379,6 @@ max(left_part)&#x2264;min(right_part)
     
         
         <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
         
     
         
