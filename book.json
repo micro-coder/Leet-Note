@@ -7,12 +7,10 @@
         "code" ,
         "github",
         "theme-comscore",
-        "tbfed-pagefooter",
         "search-plus",
         "expandable-chapters",
         "splitter" ,
         "popup",
-        "disqus",
         "katex"
     ],
 
@@ -27,14 +25,6 @@
     },
       "code": {
           "copyButtons": true
-      },
-      "tbfed-pagefooter": {
-          "copyright":"&copy 黄文庆",
-          "modify_label": "文件修订时间：",
-          "modify_format": "YYYY-MM-DD HH:mm:ss"
-      },
-      "disqus": {
-        "shortName": "Huang-wq"
-    }
+      }
     }
 }
