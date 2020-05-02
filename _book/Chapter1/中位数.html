@@ -17,7 +17,7 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
                 
@@ -41,11 +41,11 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
                 
             
                 
@@ -230,9 +230,12 @@
 <div class="search-plus" id="book-search-results">
     <div class="search-noresults">
     
+<div id="book-search-results">
+    <div class="search-noresults">
+    
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#median-of-two-sorted-arrays"><b></b>Median of Two Sorted Arrays</a></li></ul></div><a href="#median-of-two-sorted-arrays" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="median-of-two-sorted-arrays"><a name="median-of-two-sorted-arrays" class="anchor-navigation-ex-anchor" href="#median-of-two-sorted-arrays"><i class="fa fa-link" aria-hidden="true"></i></a>Median of Two Sorted Arrays</h1>
+                                <h1 id="median-of-two-sorted-arrays">Median of Two Sorted Arrays</h1>
 <p>There are two sorted arrays nums1 and nums2 of size m and n respectively.Find the median of the two sorted arrays. The overall run time complexity should be O(log(m+n)).<br><strong>&#x4E2D;&#x4F4D;&#x6570;&#x7684;&#x6982;&#x5FF5;</strong>  </p>
 <ul>
 <li>&#x5C06;&#x4E00;&#x4E2A;&#x96C6;&#x5408;&#x5212;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x957F;&#x5EA6;&#x76F8;&#x7B49;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x603B;&#x662F;&#x5927;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</li>
@@ -240,7 +243,7 @@
 <p><strong>&#x65B9;&#x6CD5;&#xFF1A; &#x5206;&#x6CBB;&#x6CD5; </strong></p>
 <p><strong>&#x7B97;&#x6CD5;&#x5206;&#x6790;</strong>  </p>
 <ul>
-<li>&#x5C06;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x5206;&#x6210;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x5173;&#x7CFB;&#x5F0F;:<pre class="language-"><code>len(left_part)=len(right_part)   
+<li>&#x5C06;&#x6709;&#x5E8F;&#x6570;&#x7EC4;&#x5206;&#x6210;&#x4E24;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x5173;&#x7CFB;&#x5F0F;:<pre><code>len(left_part)=len(right_part)   
 max(left_part)&#x2264;min(right_part)
 </code></pre></li>
 </ul>
@@ -263,37 +266,37 @@ max(left_part)&#x2264;min(right_part)
 </tbody>
 </table>
 <ul>
-<li>&#x90A3;&#x4E48;&#xFF0C;&#x4E2D;&#x4F4D;&#x6570;&#x5C31;&#x662F;&#xFF1A;<br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>a</mi><mi>n</mi><mo>=</mo><mo>[</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>l</mi><mi>e</mi><mi>f</mi><msub><mi>t</mi><mi>p</mi></msub><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>+</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>(</mo><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><msub><mi>t</mi><mi>p</mi></msub><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>]</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">median=[max(left_part)+min(right_part)] / 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mrel">=</span><span class="mopen">[</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord"><span class="mord mathit">t</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">p</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">h</span><span class="mord"><span class="mord mathit">t</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">p</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mclose">]</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>  </li>
+<li>&#x90A3;&#x4E48;&#xFF0C;&#x4E2D;&#x4F4D;&#x6570;&#x5C31;&#x662F;&#xFF1A;<br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>e</mi><mi>d</mi><mi>i</mi><mi>a</mi><mi>n</mi><mo>=</mo><mo>[</mo><mi>m</mi><mi>a</mi><mi>x</mi><mo>(</mo><mi>l</mi><mi>e</mi><mi>f</mi><mi>t</mi><mi mathvariant="normal">_</mi><mi>p</mi><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>+</mo><mi>m</mi><mi>i</mi><mi>n</mi><mo>(</mo><mi>r</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi><mi mathvariant="normal">_</mi><mi>p</mi><mi>a</mi><mi>r</mi><mi>t</mi><mo>)</mo><mo>]</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">median=[max(left\_part)+min(right\_part)] / 2 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1.06em;vertical-align:-0.31em;"></span><span class="base textstyle uncramped"><span class="mord mathit">m</span><span class="mord mathit">e</span><span class="mord mathit">d</span><span class="mord mathit">i</span><span class="mord mathit">a</span><span class="mord mathit">n</span><span class="mrel">=</span><span class="mopen">[</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">x</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">e</span><span class="mord mathit" style="margin-right:0.10764em;">f</span><span class="mord mathit">t</span><span class="mord mathrm" style="margin-right:0.02778em;">_</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathit">m</span><span class="mord mathit">i</span><span class="mord mathit">n</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">i</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord mathit">h</span><span class="mord mathit">t</span><span class="mord mathrm" style="margin-right:0.02778em;">_</span><span class="mord mathit">p</span><span class="mord mathit">a</span><span class="mord mathit" style="margin-right:0.02778em;">r</span><span class="mord mathit">t</span><span class="mclose">)</span><span class="mclose">]</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>  </li>
 </ul>
 <p><strong>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
-<pre class="language-"><code class="lang-cpp"><span class="token keyword">int</span> <span class="token function">findMedianSortedArrays</span><span class="token punctuation">(</span><span class="token keyword">int</span> A<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> A_len<span class="token punctuation">,</span> <span class="token keyword">int</span> B<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> B_len<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">int</span> m<span class="token operator">=</span>A_len<span class="token punctuation">,</span>n<span class="token operator">=</span>B_len<span class="token punctuation">;</span>
-      <span class="token keyword">int</span> iMin <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> iMax <span class="token operator">=</span> m<span class="token punctuation">,</span> halfLen <span class="token operator">=</span> <span class="token punctuation">(</span>m <span class="token operator">+</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
-      <span class="token keyword">while</span> <span class="token punctuation">(</span>iMin <span class="token operator">&lt;=</span> iMax<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token punctuation">(</span>iMin <span class="token operator">+</span> iMax<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
-          <span class="token keyword">int</span> j <span class="token operator">=</span> halfLen <span class="token operator">-</span> i<span class="token punctuation">;</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> iMax <span class="token operator">&amp;&amp;</span> B<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-              iMin <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// i is too small,&#x9700;&#x8981;&#x589E;&#x5927;i&#xFF0C;&#x51CF;&#x5C0F;j</span>
-          <span class="token punctuation">}</span>
-          <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> iMin <span class="token operator">&amp;&amp;</span> A<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-              iMax <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// i is too big,&#x9700;&#x8981;&#x51CF;&#x5C0F;i&#xFF0C;&#x589E;&#x5927;j</span>
-          <span class="token punctuation">}</span>
-          <span class="token keyword">else</span> <span class="token punctuation">{</span> <span class="token comment">// i is perfect&#xFF0C;i&#x662F;&#x4E34;&#x754C;&#x503C;&#xFF0C;0&#x6216;&#x8005;m</span>
-          <span class="token keyword">int</span> maxLeft <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> maxLeft <span class="token operator">=</span> B<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-          <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> maxLeft <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-          <span class="token keyword">else</span> <span class="token punctuation">{</span> maxLeft <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>A<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> B<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token punctuation">(</span>m <span class="token operator">+</span> n<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> maxLeft<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">findMedianSortedArrays</span><span class="hljs-params">(<span class="hljs-keyword">int</span> A[],<span class="hljs-keyword">int</span> A_len, <span class="hljs-keyword">int</span> B[],<span class="hljs-keyword">int</span> B_len)</span> </span>{
+      <span class="hljs-keyword">int</span> m=A_len,n=B_len;
+      <span class="hljs-keyword">int</span> iMin = <span class="hljs-number">0</span>, iMax = m, halfLen = (m + n + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;
+      <span class="hljs-keyword">while</span> (iMin &lt;= iMax) {
+          <span class="hljs-keyword">int</span> i = (iMin + iMax) / <span class="hljs-number">2</span>;
+          <span class="hljs-keyword">int</span> j = halfLen - i;
+          <span class="hljs-keyword">if</span> (i &lt; iMax &amp;&amp; B[j<span class="hljs-number">-1</span>] &gt; A[i]){
+              iMin = i + <span class="hljs-number">1</span>; <span class="hljs-comment">// i is too small,&#x9700;&#x8981;&#x589E;&#x5927;i&#xFF0C;&#x51CF;&#x5C0F;j</span>
+          }
+          <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i &gt; iMin &amp;&amp; A[i<span class="hljs-number">-1</span>] &gt; B[j]) {
+              iMax = i - <span class="hljs-number">1</span>; <span class="hljs-comment">// i is too big,&#x9700;&#x8981;&#x51CF;&#x5C0F;i&#xFF0C;&#x589E;&#x5927;j</span>
+          }
+          <span class="hljs-keyword">else</span> { <span class="hljs-comment">// i is perfect&#xFF0C;i&#x662F;&#x4E34;&#x754C;&#x503C;&#xFF0C;0&#x6216;&#x8005;m</span>
+          <span class="hljs-keyword">int</span> maxLeft = <span class="hljs-number">0</span>;
+          <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>) { maxLeft = B[j<span class="hljs-number">-1</span>]; }
+          <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == <span class="hljs-number">0</span>) { maxLeft = A[i<span class="hljs-number">-1</span>]; }
+          <span class="hljs-keyword">else</span> { maxLeft = max(A[i<span class="hljs-number">-1</span>], B[j<span class="hljs-number">-1</span>]); }
+          <span class="hljs-keyword">if</span> ( (m + n) % <span class="hljs-number">2</span> == <span class="hljs-number">1</span> ) { <span class="hljs-keyword">return</span> maxLeft; }
 
-          <span class="token keyword">int</span> minRight <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> m<span class="token punctuation">)</span> <span class="token punctuation">{</span> minRight <span class="token operator">=</span> B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-          <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">==</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span> minRight <span class="token operator">=</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-          <span class="token keyword">else</span> <span class="token punctuation">{</span> minRight <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span>B<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> A<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+          <span class="hljs-keyword">int</span> minRight = <span class="hljs-number">0</span>;
+          <span class="hljs-keyword">if</span> (i == m) { minRight = B[j]; }
+          <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == n) { minRight = A[i]; }
+          <span class="hljs-keyword">else</span> { minRight = min(B[j], A[i]); }
 
-          <span class="token keyword">return</span> <span class="token punctuation">(</span>maxLeft <span class="token operator">+</span> minRight<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+          <span class="hljs-keyword">return</span> (maxLeft + minRight) / <span class="hljs-number">2</span>;
+          }
+      }
+}
 </code></pre>
 <p><strong>&#x8FD0;&#x884C;&#x7ED3;&#x679C;:</strong><br>&#x3000;&#x3000;<em>&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x4E3A;:array1</em>[3] = {1,2,7};  <em>array2</em>[3] = {3,5,6};<br>&#x3000;&#x3000;<img src="picture/1-0.png" alt="1-0"></p>
 <p><strong>&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;:</strong>  </p>
@@ -306,6 +309,22 @@ max(left_part)&#x2264;min(right_part)
                                 
                                 </section>
                             
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
     </div>
     <div class="search-results">
         <div class="has-results">
@@ -345,7 +364,7 @@ max(left_part)&#x2264;min(right_part)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"中位数","level":"1.2.1","depth":2,"next":{"title":"最大子序和","level":"1.2.2","depth":2,"path":"Chapter1/最大子序和.md","ref":"Chapter1/最大子序和.md","articles":[]},"previous":{"title":"分治法","level":"1.2","depth":1,"path":"Chapter1/Chapter1.md","ref":"Chapter1/Chapter1.md","articles":[{"title":"中位数","level":"1.2.1","depth":2,"path":"Chapter1/中位数.md","ref":"Chapter1/中位数.md","articles":[]},{"title":"最大子序和","level":"1.2.2","depth":2,"path":"Chapter1/最大子序和.md","ref":"Chapter1/最大子序和.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","-highlight","prism","code","theme-comscore","search-plus","expandable-chapters","splitter","popup","katex","ancre-navigation","emphasize","github-buttons","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"emphasize":{},"livereload":{},"splitter":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]},"ancre-navigation":{"associatedWithSummary":true,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter1/中位数.md","mtime":"2020-04-30T08:13:27.089Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-02T04:03:44.459Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"中位数","level":"1.2.1","depth":2,"next":{"title":"最大子序和","level":"1.2.2","depth":2,"path":"Chapter1/最大子序和.md","ref":"Chapter1/最大子序和.md","articles":[]},"previous":{"title":"分治法","level":"1.2","depth":1,"path":"Chapter1/Chapter1.md","ref":"Chapter1/Chapter1.md","articles":[{"title":"中位数","level":"1.2.1","depth":2,"path":"Chapter1/中位数.md","ref":"Chapter1/中位数.md","articles":[]},{"title":"最大子序和","level":"1.2.2","depth":2,"path":"Chapter1/最大子序和.md","ref":"Chapter1/最大子序和.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["highlight","code","theme-comscore","search-plus","expandable-chapters","splitter","popup","katex","emphasize","github-buttons","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"emphasize":{},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true,"theme":"Hacker"},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter1/中位数.md","mtime":"2020-05-02T04:22:27.655Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-02T04:53:59.774Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -380,6 +399,14 @@ max(left_part)&#x2264;min(right_part)
     
         
         <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
         
     
         

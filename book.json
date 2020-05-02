@@ -4,9 +4,7 @@
     "description": "",
     "language" : "zh-hans",
     "plugins" : [ 
-      "-search",
-      "-highlight",
-      "prism",
+      "highlight",
       "code" ,
       "theme-comscore",
       "search-plus",
@@ -14,7 +12,6 @@
       "splitter" ,
       "popup",
       "katex",
-      "ancre-navigation",
       "emphasize",
       "github-buttons"
     ],
@@ -23,7 +20,7 @@
 
     "pluginsConfig": {
       "theme-default": {
-        "treeLevel": true
+        "treeLevel": true,
       },
       "code": {
           "copyButtons": true
@@ -40,11 +37,6 @@
           "width": "230",
           "count": true
         }]
-      },
-      "prism": {
-        "css": [
-          "prismjs/themes/prism-okaidia.css"
-        ]
       }
     }
 }
