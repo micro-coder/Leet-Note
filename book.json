@@ -4,14 +4,19 @@
     "description": "",
     "language" : "zh-hans",
     "plugins" : [ 
-        "code" ,
-        "github",
-        "theme-comscore",
-        "search-plus",
-        "expandable-chapters",
-        "splitter" ,
-        "popup",
-        "katex"
+      "-search",
+      "-highlight",
+      "prism",
+      "code" ,
+      "theme-comscore",
+      "search-plus",
+      "expandable-chapters",
+      "splitter" ,
+      "popup",
+      "katex",
+      "ancre-navigation",
+      "emphasize",
+      "github-buttons"
     ],
 
 
@@ -20,11 +25,26 @@
       "theme-default": {
         "treeLevel": true
       },
-      "github": {
-        "url": "https://github.com/micro-coder/ROS-Note"
-    },
       "code": {
           "copyButtons": true
+      },
+      "github-buttons": {
+        "buttons": [{
+          "user": "micro-coder",
+          "repo": "Leet-Note",
+          "type": "star",
+          "size": "small"
+        }, {
+          "user": "micro-coder",
+          "type": "follow",
+          "width": "230",
+          "count": true
+        }]
+      },
+      "prism": {
+        "css": [
+          "prismjs/themes/prism-okaidia.css"
+        ]
       }
     }
 }
