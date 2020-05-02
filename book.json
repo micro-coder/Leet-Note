@@ -20,7 +20,7 @@
 
     "pluginsConfig": {
       "theme-default": {
-        "treeLevel": true,
+        "treeLevel": true
       },
       "code": {
           "copyButtons": true
