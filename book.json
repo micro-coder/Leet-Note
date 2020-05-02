@@ -4,7 +4,6 @@
     "description": "",
     "language" : "zh-hans",
     "plugins" : [ 
-      "highlight",
       "code" ,
       "theme-comscore",
       "search-plus",
