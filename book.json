@@ -12,7 +12,9 @@
       "popup",
       "katex",
       "emphasize",
-      "github-buttons"
+      "github-buttons",
+      "prism",
+      "-highlight"
     ],
 
 
@@ -36,6 +38,14 @@
           "width": "230",
           "count": true
         }]
+      },
+      "prism": {
+        "css": [
+            "prismjs/themes/prism-tomorrow.css"
+        ]
+      },
+      "mathjax":{
+         "forceSVG": true
       }
     }
 }

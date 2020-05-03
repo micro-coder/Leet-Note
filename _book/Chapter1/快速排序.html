@@ -1,0 +1,460 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>快速排序 · Leet学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="黄文庆">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="中位数.html" />
+    
+    
+    <link rel="prev" href="Chapter1.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Chapter1.html">
+            
+                <a href="Chapter1.html">
+            
+                    
+                    分治法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="快速排序.html">
+            
+                <a href="快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="中位数.html">
+            
+                <a href="中位数.html">
+            
+                    
+                    中位数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="最大子序和.html">
+            
+                <a href="最大子序和.html">
+            
+                    
+                    最大子序和
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/Chapter2.html">
+            
+                <a href="../Chapter2/Chapter2.html">
+            
+                    
+                    线性时间排序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/计数排序.html">
+            
+                <a href="../Chapter2/计数排序.html">
+            
+                    
+                    计数排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >快速排序</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5FEB;&#x901F;&#x6392;&#x5E8F;">&#x5FEB;&#x901F;&#x6392;&#x5E8F;</h1>
+<p><strong>&#x95EE;&#x9898;&#xFF1A;</strong><br>&#x5B9E;&#x73B0;&#x5BF9;&#x6570;&#x7EC4;int arr[9]={-2,1,-3,4,-1,2,1,-5,4}&#x7684;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x753B;&#x51FA;&#x6D41;&#x7A0B;&#x56FE;</p>
+<p><strong>&#x65B9;&#x6CD5;&#xFF1A; &#x5206;&#x6CBB;&#x6CD5; </strong></p>
+<p><strong>&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x539F;&#x7406;&#xFF1A;</strong>  </p>
+<ul>
+<li>&#x4EFB;&#x627E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4F5C;&#x4E3A;&#x57FA;&#x51C6;&#xFF0C;&#x5BF9;&#x5F85;&#x6392;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x5206;&#x7EC4;  </li>
+<li>&#x4F7F;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5DE6;&#x8FB9;&#x7684;&#x6570;&#x636E;&#x90FD;&#x6BD4;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5C0F;&#xFF0C;&#x53F3;&#x8FB9;&#x7684;&#x6570;&#x636E;&#x90FD;&#x6BD4;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5927;&#x3002;&#x8FD9;&#x6837;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5C31;&#x653E;&#x5728;&#x4E86;&#x6B63;&#x786E;&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;&#x3002;  </li>
+<li>&#x7136;&#x540E;&#x5BF9;&#x57FA;&#x51C6;&#x5143;&#x7D20;&#x5DE6;&#x8FB9;&#x548C;&#x53F3;&#x8FB9;&#x7684;&#x6570;&#x636E;&#x5206;&#x7EC4;&#x8FDB;&#x884C;&#x76F8;&#x540C;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6700;&#x540E;&#x5B8C;&#x6210;&#x6570;&#x7EC4;&#x7684;&#x6392;&#x5E8F;&#x3002;</li>
+</ul>
+<p><strong>&#x4EE3;&#x7801;&#x5982;&#x4E0B;:</strong></p>
+<pre class="language-"><code class="lang-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream&gt;</span></span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cin<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>cout<span class="token punctuation">;</span>
+<span class="token keyword">using</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">Partition</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> low<span class="token punctuation">,</span> <span class="token keyword">int</span> high<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> pivot_key<span class="token operator">=</span>arr<span class="token punctuation">[</span>low<span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//&#x4E34;&#x65F6;&#x5B58;&#x50A8;&#x57FA;&#x51C6;&#x503C;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>low<span class="token operator">&lt;</span>high<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>low<span class="token operator">&lt;</span>high <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>high<span class="token punctuation">]</span><span class="token operator">&gt;=</span>pivot_key<span class="token punctuation">)</span>  <span class="token operator">--</span>high<span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>low<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>high<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>low<span class="token operator">&lt;</span>high <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>low<span class="token punctuation">]</span><span class="token operator">&lt;=</span>pivot_key<span class="token punctuation">)</span>  <span class="token operator">++</span>low<span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>high<span class="token punctuation">]</span><span class="token operator">=</span>arr<span class="token punctuation">[</span>low<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    arr<span class="token punctuation">[</span>low<span class="token punctuation">]</span><span class="token operator">=</span>pivot_key<span class="token punctuation">;</span><span class="token comment">//&#x628A;&#x57FA;&#x51C6;&#x503C;&#x653E;&#x5230;&#x6700;&#x540E;&#x51C6;&#x786E;&#x7684;&#x4F4D;&#x7F6E;</span>
+    <span class="token keyword">return</span> low<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">QuickSort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> low<span class="token punctuation">,</span> <span class="token keyword">int</span> high<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> pivot<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>low<span class="token operator">&lt;</span>high<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        pivot<span class="token operator">=</span><span class="token function">Partition</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>low<span class="token punctuation">,</span>high<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">QuickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>low<span class="token punctuation">,</span>pivot<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">QuickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> pivot<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>high<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token function">QuickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;&#x5FEB;&#x901F;&#x6392;&#x5E8F;&#x7ED3;&#x679C;= &quot;</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">char</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">9</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        cout<span class="token operator">&lt;&lt;</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">&apos;\t&apos;</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><strong>&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</strong><br><img src="picture/1-2.png" alt="1-2"></p>
+<p><strong>&#x5FEB;&#x6392;&#x6D41;&#x7A0B;&#x56FE;</strong><br>&#x3000;&#x3000;&#x3000;&#x3000;<img src="picture/1-3.png" alt="1-3"><br><strong>&#x6CE8;:</strong> <em>&#x8910;&#x8272;&#x7684;&#x6570;&#x5B57;&#x683C;&#x8868;&#x793A;&#x6B64;&#x8D9F;&#x5FEB;&#x6392;&#x7684;&#x57FA;&#x51C6;&#x503C;</em></p>
+<p><strong>&#x7B97;&#x6CD5;&#x590D;&#x6742;&#x5EA6;&#x5206;&#x6790;:</strong><br>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nlg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span><br>&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#xFF1A;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>g</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(lg(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Chapter1.html" class="navigation navigation-prev " aria-label="Previous page: 分治法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="中位数.html" class="navigation navigation-next " aria-label="Next page: 中位数">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"快速排序","level":"1.2.1","depth":2,"next":{"title":"中位数","level":"1.2.2","depth":2,"path":"Chapter1/中位数.md","ref":"Chapter1/中位数.md","articles":[]},"previous":{"title":"分治法","level":"1.2","depth":1,"path":"Chapter1/Chapter1.md","ref":"Chapter1/Chapter1.md","articles":[{"title":"快速排序","level":"1.2.1","depth":2,"path":"Chapter1/快速排序.md","ref":"Chapter1/快速排序.md","articles":[]},{"title":"中位数","level":"1.2.2","depth":2,"path":"Chapter1/中位数.md","ref":"Chapter1/中位数.md","articles":[]},{"title":"最大子序和","level":"1.2.3","depth":2,"path":"Chapter1/最大子序和.md","ref":"Chapter1/最大子序和.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","theme-comscore","search-plus","expandable-chapters","splitter","popup","katex","emphasize","github-buttons","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]},"mathjax":{"forceSVG":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter1/快速排序.md","mtime":"2020-05-03T03:00:53.102Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-03T02:58:37.449Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
