@@ -1,0 +1,728 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>红黑树 · Leet学习笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="黄文庆">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="二叉查找树.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/Chapter1.html">
+            
+                <a href="../Chapter1/Chapter1.html">
+            
+                    
+                    分治法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/快速排序.html">
+            
+                <a href="../Chapter1/快速排序.html">
+            
+                    
+                    快速排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/中位数.html">
+            
+                <a href="../Chapter1/中位数.html">
+            
+                    
+                    中位数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Chapter1/最大子序和.html">
+            
+                <a href="../Chapter1/最大子序和.html">
+            
+                    
+                    最大子序和
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/Chapter2.html">
+            
+                <a href="../Chapter2/Chapter2.html">
+            
+                    
+                    线性时间排序
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/计数排序.html">
+            
+                <a href="../Chapter2/计数排序.html">
+            
+                    
+                    计数排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Chapter3.html">
+            
+                <a href="Chapter3.html">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="二叉查找树.html">
+            
+                <a href="二叉查找树.html">
+            
+                    
+                    二叉查找树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="红黑树.html">
+            
+                <a href="红黑树.html">
+            
+                    
+                    红黑树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >红黑树</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7EA2;&#x9ED1;&#x6811;">&#x7EA2;&#x9ED1;&#x6811;</h1>
+<p>&#x7EA2;&#x9ED1;&#x6811;&#x4E2D;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x5305;&#x542B;&#x4E94;&#x4E2A;&#x57DF;:color,key,left,right &#x548C; p&#x3002;&#x5982;&#x679C;&#x67D0;&#x7ED3;&#x70B9;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x5B50;&#x7ED3;&#x70B9;&#x6216;&#x7236;&#x7ED3;&#x70B9;,&#x5219;&#x8BE5;&#x57DF;&#x6307;&#x5411; NIL&#x3002;</p>
+<p>&#x4E00;&#x68F5;&#x4E8C;&#x53C9;&#x6811;&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x4E0B;&#x9762;&#x7684;&#x7EA2;&#x9ED1;&#x6027;&#x8D28;,&#x5219;&#x4E3A;&#x4E00;&#x68F5;&#x7EA2;&#x9ED1;&#x6811;:</p>
+<ol>
+<li>&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x6216;&#x662F;&#x7EA2;&#x7684;,&#x6216;&#x662F;&#x9ED1;&#x7684;&#x3002;</li>
+<li>&#x6839;&#x7ED3;&#x70B9;&#x662F;&#x9ED1;&#x7684;&#x3002;</li>
+<li>&#x6BCF;&#x4E2A;&#x53F6;&#x7ED3;&#x70B9; (NIL) &#x662F;&#x9ED1;&#x7684;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x662F;&#x7EA2;&#x7684;,&#x5219;&#x5B83;&#x7684;&#x4E24;&#x4E2A;&#x513F;&#x5B50;&#x90FD;&#x662F;&#x9ED1;&#x7684;&#x3002;</li>
+<li>&#x5BF9;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;,&#x4ECE;&#x8BE5;&#x7ED3;&#x70B9;&#x5230;&#x5176;&#x5B50;&#x5B59;&#x7ED3;&#x70B9;&#x7684;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#x4E0A;&#x5305;&#x542B;&#x76F8;&#x540C;&#x6570;&#x76EE;&#x7684;&#x9ED1;&#x7ED3;&#x70B9;&#x3002;</li>
+</ol>
+<h2 id="&#x7B97;&#x6CD5;&#x5206;&#x6790;">&#x7B97;&#x6CD5;&#x5206;&#x6790;</h2>
+<p>RBTree&#x7684;&#x7ED3;&#x70B9;&#x7ED3;&#x6784;&#xFF1A;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">class</span> <span class="token class-name">Node</span> <span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token keyword">int</span> key<span class="token punctuation">;</span><span class="token comment">//&#x5173;&#x952E;&#x5B57;</span>
+    Node <span class="token operator">*</span> p<span class="token punctuation">;</span><span class="token comment">//&#x7236;&#x7ED3;&#x70B9;</span>
+    Node <span class="token operator">*</span> left<span class="token punctuation">;</span><span class="token comment">//&#x5DE6;&#x5B50;&#x7ED3;&#x70B9;</span>
+    Node <span class="token operator">*</span> right<span class="token punctuation">;</span><span class="token comment">//&#x53F3;&#x5B50;&#x7ED3;&#x70B9;</span>
+    <span class="token keyword">enum</span> <span class="token class-name">c</span><span class="token punctuation">{</span>RED<span class="token punctuation">,</span>BLACK<span class="token punctuation">}</span><span class="token punctuation">;</span>
+    c color<span class="token punctuation">;</span>
+    <span class="token function">Node</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="&#x4E00;&#x3001;-&#x5DE6;&#x65CB;&#x64CD;&#x4F5C;">&#x4E00;&#x3001; &#x5DE6;&#x65CB;&#x64CD;&#x4F5C;</h3>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> RBTree<span class="token operator">::</span><span class="token function">LeftRotate</span><span class="token punctuation">(</span>Node <span class="token operator">*</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span> y<span class="token operator">=</span>n<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>right<span class="token operator">=</span>y<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>y<span class="token operator">-&gt;</span>left<span class="token operator">!=</span>NIL<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        y<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>p<span class="token operator">=</span>n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    y<span class="token operator">-&gt;</span>p<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token operator">==</span>NIL<span class="token punctuation">)</span>  root<span class="token operator">=</span>y<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token operator">=</span>y<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>  n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token operator">=</span>y<span class="token punctuation">;</span>
+    y<span class="token operator">-&gt;</span>left<span class="token operator">=</span>n<span class="token punctuation">;</span>    
+    n<span class="token operator">-&gt;</span>p<span class="token operator">=</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x4E8C;&#x3001;-&#x53F3;&#x65CB;&#x64CD;&#x4F5C;">&#x4E8C;&#x3001; &#x53F3;&#x65CB;&#x64CD;&#x4F5C;</h3>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> RBTree<span class="token operator">::</span><span class="token function">RightRotate</span><span class="token punctuation">(</span>Node <span class="token operator">*</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span> y<span class="token operator">=</span>n<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+    n<span class="token operator">-&gt;</span>left<span class="token operator">=</span>y<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>y<span class="token operator">-&gt;</span>right<span class="token operator">!=</span>NIL<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        y<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>p<span class="token operator">=</span>n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    y<span class="token operator">-&gt;</span>p<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token operator">==</span>NIL<span class="token punctuation">)</span>  root<span class="token operator">=</span>y<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token operator">=</span>y<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>  n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token operator">=</span>y<span class="token punctuation">;</span>
+    y<span class="token operator">-&gt;</span>right<span class="token operator">=</span>n<span class="token punctuation">;</span>    
+    n<span class="token operator">-&gt;</span>p<span class="token operator">=</span>y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x4E09;&#x3001;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;">&#x4E09;&#x3001;&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;</h3>
+<p>&#x6839;&#x636E;&#x7ED9;&#x5B9A;&#x7684;&#x5173;&#x952E;&#x5B57;&#x503C;&#xFF0C;&#x67E5;&#x627E;&#x51FA;&#x67D0;&#x4E2A;&#x7ED3;&#x70B9;</p>
+<pre class="language-"><code class="lang-cpp">Node <span class="token operator">*</span> RBTree<span class="token operator">::</span><span class="token function">Search</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span> cur<span class="token operator">=</span>root<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token operator">-&gt;</span>key<span class="token operator">!=</span>k<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>cur<span class="token operator">-&gt;</span>key<span class="token operator">&lt;</span>k<span class="token operator">&amp;&amp;</span>cur<span class="token operator">-&gt;</span>right<span class="token operator">!=</span>NIL<span class="token punctuation">)</span>
+            cur<span class="token operator">=</span>cur<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token operator">-&gt;</span>key<span class="token operator">&gt;</span>k<span class="token operator">&amp;&amp;</span>cur<span class="token operator">-&gt;</span>left<span class="token operator">!=</span>NIL<span class="token punctuation">)</span>
+            cur<span class="token operator">=</span>cur<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span> NIL<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> cur<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x56DB;&#x3001;&#x63D2;&#x5165;&#x64CD;&#x4F5C;">&#x56DB;&#x3001;&#x63D2;&#x5165;&#x64CD;&#x4F5C;</h3>
+<p>&#x5916;&#x90E8;&#x63A5;&#x53E3;Insert&#x51FD;&#x6570;</p>
+<pre class="language-"><code class="lang-cpp">Node <span class="token operator">*</span> RBTree<span class="token operator">::</span><span class="token function">Insert</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span> cur<span class="token operator">=</span>root<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span> prev<span class="token operator">=</span>root<span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>cur<span class="token operator">!=</span> NIL<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        prev<span class="token operator">=</span>cur<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">&lt;</span>cur<span class="token operator">-&gt;</span>key<span class="token punctuation">)</span>
+            cur<span class="token operator">=</span>cur<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>k<span class="token operator">&gt;</span>cur<span class="token operator">-&gt;</span>key<span class="token punctuation">)</span>
+            cur<span class="token operator">=</span>cur<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            std<span class="token operator">::</span>cerr<span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token operator">&lt;&lt;</span>k<span class="token operator">&lt;&lt;</span><span class="token string">&quot; already in RBTree.\n&quot;</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> NIL<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">&lt;</span>prev<span class="token operator">-&gt;</span>key<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        prev<span class="token operator">-&gt;</span>left<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prev<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>p<span class="token operator">=</span>prev<span class="token punctuation">;</span>
+        prev<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>left<span class="token operator">=</span>prev<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>right<span class="token operator">=</span>NIL<span class="token punctuation">;</span>
+        prev<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+        <span class="token function">InsertFixup</span><span class="token punctuation">(</span>prev<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> prev<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">&gt;</span>prev<span class="token operator">-&gt;</span>key<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        prev<span class="token operator">-&gt;</span>right<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prev<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>p<span class="token operator">=</span>prev<span class="token punctuation">;</span>
+        prev<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>left<span class="token operator">=</span>prev<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>right<span class="token operator">=</span>NIL<span class="token punctuation">;</span>
+        prev<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+        <span class="token function">InsertFixup</span><span class="token punctuation">(</span>prev<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> prev<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5185;&#x90E8;&#x8C03;&#x7528;Insert&#x51FD;&#x6570;&#xFF0C;&#x7EF4;&#x6301;&#x7EA2;&#x9ED1;&#x6811;&#x6027;&#x8D28;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> RBTree<span class="token operator">::</span><span class="token function">InsertFixup</span><span class="token punctuation">(</span>Node <span class="token operator">*</span> n<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">==</span>Node<span class="token operator">::</span>RED<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Node <span class="token operator">*</span> uncle<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">==</span>Node<span class="token operator">::</span>RED<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                n<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">==</span>Node<span class="token operator">::</span>BLACK<span class="token operator">&amp;&amp;</span>n<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                n<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+                <span class="token function">LeftRotate</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">==</span>Node<span class="token operator">::</span>BLACK<span class="token operator">&amp;&amp;</span>n<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                <span class="token function">RightRotate</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Node <span class="token operator">*</span> uncle<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">==</span>Node<span class="token operator">::</span>RED<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                n<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">==</span>Node<span class="token operator">::</span>BLACK<span class="token operator">&amp;&amp;</span>n<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                n<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+                <span class="token function">RightRotate</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>uncle<span class="token operator">-&gt;</span>color<span class="token operator">==</span>Node<span class="token operator">::</span>BLACK<span class="token operator">&amp;&amp;</span>n<span class="token operator">==</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                <span class="token function">LeftRotate</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    root<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x4E94;&#x3001;&#x5220;&#x9664;&#x64CD;&#x4F5C;">&#x4E94;&#x3001;&#x5220;&#x9664;&#x64CD;&#x4F5C;</h3>
+<p>&#x5916;&#x90E8;delete&#x63A5;&#x53E3;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">bool</span> RBTree<span class="token operator">::</span><span class="token function">Delete</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span> x<span class="token punctuation">;</span>
+    Node <span class="token operator">*</span> z<span class="token operator">=</span><span class="token function">Search</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span> y<span class="token operator">=</span>z<span class="token punctuation">;</span>
+    Node<span class="token operator">::</span>c y_original_color<span class="token operator">=</span>y<span class="token operator">-&gt;</span>color<span class="token punctuation">;</span><span class="token comment">//of toReplace</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>z<span class="token operator">-&gt;</span>left<span class="token operator">==</span>NIL<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        x<span class="token operator">=</span>z<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+        <span class="token function">TransPlant</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span>z<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>z<span class="token operator">-&gt;</span>right<span class="token operator">==</span>NIL<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        x<span class="token operator">=</span>z<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+        <span class="token function">TransPlant</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span>z<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        y<span class="token operator">=</span><span class="token function">Minimum</span><span class="token punctuation">(</span>z<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        y_original_color<span class="token operator">=</span>y<span class="token operator">-&gt;</span>color<span class="token punctuation">;</span>
+        x<span class="token operator">=</span>y<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>y<span class="token operator">-&gt;</span>p<span class="token operator">==</span>z<span class="token punctuation">)</span> x<span class="token operator">-&gt;</span>p<span class="token operator">=</span>y<span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">TransPlant</span><span class="token punctuation">(</span>y<span class="token punctuation">,</span>y<span class="token operator">-&gt;</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            y<span class="token operator">-&gt;</span>right<span class="token operator">=</span>z<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+            y<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>p<span class="token operator">=</span>y<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">TransPlant</span><span class="token punctuation">(</span>z<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        y<span class="token operator">-&gt;</span>left<span class="token operator">=</span>z<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+        y<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>p<span class="token operator">=</span>y<span class="token punctuation">;</span>
+        y<span class="token operator">-&gt;</span>color<span class="token operator">=</span>z<span class="token operator">-&gt;</span>color<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>y_original_color<span class="token operator">==</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">)</span>
+        <span class="token function">DeleteFixup</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>&#x5185;&#x90E8;delete&#x63A5;&#x53E3;&#xFF0C;&#x7EF4;&#x6301;&#x7EA2;&#x9ED1;&#x6811;&#x6027;&#x8D28;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">void</span> RBTree<span class="token operator">::</span><span class="token function">DeleteFixup</span><span class="token punctuation">(</span>Node <span class="token operator">*</span>n<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    Node <span class="token operator">*</span>brother<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>BLACK <span class="token operator">&amp;&amp;</span> n <span class="token operator">!=</span> root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                brother <span class="token operator">=</span> n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>brother<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>RED<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                    brother<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    <span class="token function">LeftRotate</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    brother <span class="token operator">=</span> n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> 
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>brother<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>BLACK <span class="token operator">&amp;&amp;</span> brother<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    brother<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                    n <span class="token operator">=</span> n<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>brother<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    brother<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                    brother<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    <span class="token function">RightRotate</span><span class="token punctuation">(</span>brother<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    brother<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>right<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span>
+                <span class="token punctuation">{</span>
+                    brother<span class="token operator">-&gt;</span>color<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token punctuation">;</span>
+                    n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    brother<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    <span class="token function">LeftRotate</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    n<span class="token operator">=</span>root<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+
+
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                brother <span class="token operator">=</span> n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>brother<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>RED<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                    brother<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    <span class="token function">LeftRotate</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    brother <span class="token operator">=</span> n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> 
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>brother<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>BLACK <span class="token operator">&amp;&amp;</span> brother<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    brother<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                    n <span class="token operator">=</span> n<span class="token operator">-&gt;</span>p<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>brother<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>color <span class="token operator">==</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    brother<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>RED<span class="token punctuation">;</span>
+                    brother<span class="token operator">-&gt;</span>right<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    <span class="token function">LeftRotate</span><span class="token punctuation">(</span>brother<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    brother<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>left<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span>
+                <span class="token punctuation">{</span>
+                    brother<span class="token operator">-&gt;</span>color<span class="token operator">=</span>n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token punctuation">;</span>
+                    n<span class="token operator">-&gt;</span>p<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    brother<span class="token operator">-&gt;</span>left<span class="token operator">-&gt;</span>color<span class="token operator">=</span>Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+                    <span class="token function">RightRotate</span><span class="token punctuation">(</span>n<span class="token operator">-&gt;</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    n<span class="token operator">=</span>root<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    n<span class="token operator">-&gt;</span>color <span class="token operator">=</span> Node<span class="token operator">::</span>BLACK<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="&#x516D;&#x3001;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;">&#x516D;&#x3001;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;</h3>
+<p>&#x5982;&#x56FE;&#xFF1A;
+<img src="picture/1-1.png" alt="1-1"></p>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="二叉查找树.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 二叉查找树">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"红黑树","level":"1.4.2","depth":2,"previous":{"title":"二叉查找树","level":"1.4.1","depth":2,"path":"Chapter3/二叉查找树.md","ref":"Chapter3/二叉查找树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","theme-comscore","search-plus","expandable-chapters","splitter","popup","katex","emphasize","github-buttons","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]},"mathjax":{"forceSVG":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter3/红黑树.md","mtime":"2020-05-25T10:05:22.328Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T10:04:04.160Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
