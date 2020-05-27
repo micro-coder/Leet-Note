@@ -86,6 +86,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../Chapter4/Chapter4.html" />
+    
     
     <link rel="prev" href="二叉查找树.html" />
     
@@ -263,6 +265,51 @@
             
                     
                     红黑树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/Chapter4.html">
+            
+                <a href="../Chapter4/Chapter4.html">
+            
+                    
+                    贪心算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/任务调度/任务调度.html">
+            
+                <a href="../Chapter4/任务调度/任务调度.html">
+            
+                    
+                    任务调度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/具有期限和惩罚的单位时间任务调度/具有期限和惩罚的单位时间任务调度.html">
+            
+                <a href="../Chapter4/具有期限和惩罚的单位时间任务调度/具有期限和惩罚的单位时间任务调度.html">
+            
+                    
+                    具有期限和惩罚的单位时间任务调度
             
                 </a>
             
@@ -599,6 +646,46 @@
 <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="&#x516D;&#x3001;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;">&#x516D;&#x3001;&#x5B9E;&#x9A8C;&#x7ED3;&#x679C;</h3>
+<p>main&#x51FD;&#x6570;&#xFF1A;</p>
+<pre class="language-"><code class="lang-cpp"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> num1<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">41</span><span class="token punctuation">,</span><span class="token number">38</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num2<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num3<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span> root1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span>num1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Node <span class="token operator">*</span> root2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">Node</span><span class="token punctuation">(</span>num2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    RBTree <span class="token function">tree1</span><span class="token punctuation">(</span>root1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    RBTree <span class="token function">tree2</span><span class="token punctuation">(</span>root2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;num1[6]={41,38,31,12,19,8}: &quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">6</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+         tree1<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span>num1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+
+    tree1<span class="token punctuation">.</span><span class="token function">InorderTreeWalk</span><span class="token punctuation">(</span>tree1<span class="token punctuation">.</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+
+    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;num2[]={1,5,6,7,8,9,10,11,12,13,14,15}: &quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">12</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+     <span class="token punctuation">{</span>
+         tree2<span class="token punctuation">.</span><span class="token function">Insert</span><span class="token punctuation">(</span>num2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+
+    tree2<span class="token punctuation">.</span><span class="token function">InorderTreeWalk</span><span class="token punctuation">(</span>tree2<span class="token punctuation">.</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+
+    std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span><span class="token string">&quot;delete&#x4E4B;&#x540E;&#xFF1A; &quot;</span><span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+     <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          tree2<span class="token punctuation">.</span><span class="token function">Delete</span><span class="token punctuation">(</span>num3<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+<span class="token comment">// tree2.Delete(num3[1]);</span>
+<span class="token comment">// tree2.Delete(num3[2]);</span>
+     tree2<span class="token punctuation">.</span><span class="token function">InorderTreeWalk</span><span class="token punctuation">(</span>tree2<span class="token punctuation">.</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     std<span class="token operator">::</span>cout<span class="token operator">&lt;&lt;</span>std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>&#x5982;&#x56FE;&#xFF1A;
 <img src="picture/1-1.png" alt="1-1"></p>
 
@@ -645,10 +732,14 @@
 
             
                 
-                <a href="二叉查找树.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 二叉查找树">
+                <a href="二叉查找树.html" class="navigation navigation-prev " aria-label="Previous page: 二叉查找树">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../Chapter4/Chapter4.html" class="navigation navigation-next " aria-label="Next page: 贪心算法">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -657,7 +748,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"红黑树","level":"1.4.2","depth":2,"previous":{"title":"二叉查找树","level":"1.4.1","depth":2,"path":"Chapter3/二叉查找树.md","ref":"Chapter3/二叉查找树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","theme-comscore","search-plus","expandable-chapters","splitter","popup","katex","emphasize","github-buttons","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]},"mathjax":{"forceSVG":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter3/红黑树.md","mtime":"2020-05-25T10:05:22.328Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-25T10:04:04.160Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"红黑树","level":"1.4.2","depth":2,"next":{"title":"贪心算法","level":"1.5","depth":1,"path":"Chapter4/Chapter4.md","ref":"Chapter4/Chapter4.md","articles":[{"title":"任务调度","level":"1.5.1","depth":2,"path":"Chapter4/任务调度/任务调度.md","ref":"Chapter4/任务调度/任务调度.md","articles":[]},{"title":"具有期限和惩罚的单位时间任务调度","level":"1.5.2","depth":2,"path":"Chapter4/具有期限和惩罚的单位时间任务调度/具有期限和惩罚的单位时间任务调度.md","ref":"Chapter4/具有期限和惩罚的单位时间任务调度/具有期限和惩罚的单位时间任务调度.md","articles":[]}]},"previous":{"title":"二叉查找树","level":"1.4.1","depth":2,"path":"Chapter3/二叉查找树.md","ref":"Chapter3/二叉查找树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","theme-comscore","search-plus","expandable-chapters","splitter","popup","katex","emphasize","github-buttons","prism","-highlight","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"emphasize":{},"livereload":{},"splitter":{},"search":{},"popup":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"github-buttons":{"buttons":[{"user":"micro-coder","repo":"Leet-Note","type":"star","size":"small"},{"user":"micro-coder","type":"follow","width":"230","count":true}]},"mathjax":{"forceSVG":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false,"treeLevel":true},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"黄文庆","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Leet学习笔记","language":"zh-hans","gitbook":"*","description":""},"file":{"path":"Chapter3/红黑树.md","mtime":"2020-05-25T12:33:35.752Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-27T15:23:55.731Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
